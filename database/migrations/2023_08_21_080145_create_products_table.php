@@ -19,7 +19,7 @@ return new class extends Migration
             $table->float("price");
             $table->string("description", 5000);
             $table->integer("bought")->default(0);
-            $table->foreign("category_id")->references("id")->on("categories")->onDelete("cascade");
+            $table->foreign("category_id")->references("id")->on("categories")->onDelete("cascade")->default("");
             $table->timestamps();
             $table->softDeletes();
         });

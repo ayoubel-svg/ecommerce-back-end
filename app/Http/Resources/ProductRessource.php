@@ -22,7 +22,7 @@ class ProductRessource extends JsonResource
             "bought" => $this->bought,
             "description" => $this->description,
             "category" => $this->category->name,
-            "image" => $this->images[0]->image,
+            "images" => $this->images->pluck('image')->toArray(),
             "categoryNum" => count($this->category->product)
         ];
     }
